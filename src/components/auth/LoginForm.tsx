@@ -67,7 +67,8 @@ export default function LoginForm() {
             <label className="block text-sm font-medium text-gray-700">Correo electrónico</label>
             <input
               type="email"
-              placeholder="admin@billennium.com"
+                          placeholder="admin@billennium.com"
+                          autoComplete="off"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -79,7 +80,8 @@ export default function LoginForm() {
             <label className="block text-sm font-medium text-gray-700">Contraseña</label>
             <input
               type="password"
-              placeholder="veriliz2025"
+                          placeholder="veriliz2025"
+                          autoComplete="off"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
