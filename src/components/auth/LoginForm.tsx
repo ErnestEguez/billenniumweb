@@ -26,7 +26,6 @@ export default function LoginForm() {
       return;
     }
 
-    // ✅ CORRECCIÓN: empresas es un array → accede a [0]
     const emp_nombre = data.empresas?.[0]?.emp_nombre || 'Empresa';
 
     const usuario = {
@@ -42,30 +41,55 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded shadow-md w-96">
-        <h1 className="text-2xl font-bold text-center mb-6">Billennium</h1>
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-100 flex items-center justify-center p-4">
+      <div className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+        {/* Logo */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/logo.png"
+            alt="Billennium Logo"
+            className="w-24 h-24 rounded-full border-4 border-green-500"
+          />
+        </div>
+
+        {/* Título */}
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-2">
+          Sistema auxiliar de administración de Billennium ERP en la nube
+        </h1>
+        <p className="text-sm text-center text-gray-500 mb-6">Inicia sesión para continuar</p>
+
+        {/* Error */}
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Correo electrónico"
-            className="w-full p-2 border rounded mb-4"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            className="w-full p-2 border rounded mb-4"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+
+        {/* Formulario */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Correo electrónico</label>
+            <input
+              type="email"
+              placeholder="admin@billennium.com"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Contraseña</label>
+            <input
+              type="password"
+              placeholder="veriliz2025"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
           >
             Ingresar
           </button>
