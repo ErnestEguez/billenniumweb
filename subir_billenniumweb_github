@@ -1,0 +1,9 @@
+@echo off
+cd C:\billenniumweb
+git init
+git add .
+git commit -m "feat: sistema Billennium reconstruido desde cero"
+git remote add origin https://github.com/ErnestEguez/PedidosBillennium.git
+git push -u origin main --force
+echo ­Despliegue completado!
+pause
