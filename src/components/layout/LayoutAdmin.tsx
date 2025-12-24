@@ -1,5 +1,5 @@
 // src/components/layout/LayoutAdmin.tsx
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import SidebarAdmin from './SidebarAdmin';
 
 export default function LayoutAdmin({ children }: { children: ReactNode }) {

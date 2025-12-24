@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { Package, Search, Plus, Send } from 'lucide-react';
 
 export default function Proformas() {
-  const [clientes, setClientes] = useState([]);
-  const [articulos, setArticulos] = useState([]);
+ 
   const [proforma, setProforma] = useState({
     cliente: '',
     formaPago: '',

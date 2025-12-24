@@ -1,5 +1,5 @@
 // src/components/layout/LayoutVendedor.tsx
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import SidebarVendedor from './SidebarVendedor';
 
 export default function LayoutVendedor({ children }: { children: ReactNode }) {

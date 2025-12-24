@@ -26,10 +26,17 @@ export default function LoginForm() {
       return;
     }
 
+    // ✅ CORRECCIÓN: empresas es un array → accede a [0]
+    const emp_nombre = data.empresas?.[0]?.emp_nombre || 'Empresa';
+
     const usuario = {
-      ...data,
-      emp_nombre: data.empresas?.emp_nombre || 'Empresa',
+      usven_id: data.usven_id,
+      usven_id_empresa: data.usven_id_empresa,
+      usven_nombre: data.usven_nombre,
+      usven_tipo_usuario: data.usven_tipo_usuario,
+      emp_nombre,
     };
+
     localStorage.setItem('usuario', JSON.stringify(usuario));
     navigate(usuario.usven_tipo_usuario === 1 ? '/admin/empresas' : '/vendedor/proformas');
   };
